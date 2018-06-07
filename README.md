@@ -9,3 +9,4 @@
 8. Alias your nvim config file to be your vimrc: `ln -s ~/dotfiles/vim/vimrc ~/.config/nvim/init.vim`
 9. Alias vim as nvim by adding this to ~/.bash_profile: `alias vim='nvim'`
 10. May also need to install powerline and change fonts in iTerm: https://github.com/vim-airline/vim-airline/issues/142
+11. After all this, run `:PlugInstall` with vim running.
