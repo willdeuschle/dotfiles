@@ -10,3 +10,8 @@
 9. Alias vim as nvim by adding this to ~/.bash_profile: `alias vim='nvim'`
 10. May also need to install powerline and change fonts in iTerm: https://github.com/vim-airline/vim-airline/issues/142
 11. After all this, run `:PlugInstall` with vim running.
+
+# for vscode
+need to link the settings.json file to get vim bindings (after installing the vim plugin in vscode):
+`rm ~/Library/Application\ Support/Code/User/settings.json`
+`ln -s ~/dotfiles/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json`
