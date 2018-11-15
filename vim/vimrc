@@ -165,17 +165,6 @@ endif
 let mapleader = "\<Space>"
 nnoremap <Leader>w :w<CR>
 
-" elm formatting
-let g:elm_format_autosave = 1
-let g:elm_make_show_warnings = 1
-"" new stuff for elm, trying
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:elm_syntastic_show_warnings = 1
-""
-nnoremap <Leader>m :ElmMake<CR>
-nnoremap <Leader>e :ElmErrorDetail<CR>
-
 """""""""""""""""""""""
 " Copying and pasting "
 """""""""""""""""""""""
