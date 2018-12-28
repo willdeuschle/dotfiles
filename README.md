@@ -16,3 +16,5 @@
 need to link the settings.json file to get vim bindings (after installing the vim plugin in vscode):
 `rm ~/Library/Application\ Support/Code/User/settings.json`
 `ln -s ~/dotfiles/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json`
+
+#testing
