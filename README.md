@@ -17,4 +17,3 @@ need to link the settings.json file to get vim bindings (after installing the vi
 `rm ~/Library/Application\ Support/Code/User/settings.json`
 `ln -s ~/dotfiles/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json`
 
-#testing
