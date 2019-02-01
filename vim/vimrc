@@ -290,8 +290,13 @@ endif
 " For Airline
 set laststatus=2
 
-" For Airline
 let g:airline_powerline_fonts = 1
+
+" Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
 
 " For TMUX plugin
 let g:tmuxline_powerline_separators = 1
@@ -327,3 +332,25 @@ let g:netrw_winsize = 25
     "autocmd!
     "autocmd VimEnter * :Vexplore
 "augroup END
+
+" BUFFER STUFF
+" need this for editing files in buffers
+set hid
+
+" To open a new empty buffer
+" This replaces :tabnew which I used to bind to this mapping
+nmap <leader>T :enew<cr>
+
+" Move to the next buffer
+nmap <leader>l :bnext<CR>
+
+" Move to the previous buffer
+nmap <leader>k :bprevious<CR>
+
+" Close the current buffer and move to the previous one
+" This replicates the idea of closing a tab
+nmap <leader>q :bp <BAR> bd #<CR>
+
+" Show all open buffers and their status
+nmap <leader>bl :ls<CR>
+
