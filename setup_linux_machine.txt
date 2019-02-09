@@ -1,0 +1,39 @@
+#!/bin/bash -eu
+
+# apt packages
+sudo apt install -y vim neovim wget curl gnome-tweak-tool git tmux python3-pip fonts-powerline silversearcher-ag flake8 htop rsync
+
+# python packages
+pip3 install --upgrade neovim
+
+# git setup
+if ! [ -f ~/.gitconfig ]; then
+    git config --global user.name "Will Deuschle"
+    git config --global user.email "wjdeuschle@gmail.com"
+fi
+
+# dotfiles setup
+if ! [ -d ~/dotfiles ]; then
+    git clone https://github.com/willdeuschle/dotfiles.git ~/dotfiles
+fi
+if ! [ -f ~/.tmux.conf ]; then
+    ln -s ~/dotfiles/tmux/.tmux.conf ~/.tmux.conf
+fi
+if ! [ -f ~/.vimrc ]; then
+    ln -s ~/dotfiles/vim/vimrc ~/.vimrc
+fi
+if ! [ -d ~/.config ]; then
+    mkdir ~/.config
+fi
+if ! [ -d ~/.config/nvim ]; then
+    mkdir ~/.config/nvim
+fi
+if ! [ -f ~/.config/nvim/init.vim ]; then
+    ln -s ~/dotfiles/vim/vimrc ~/.config/nvim/init.vim
+fi
+
+# final tweaks
+echo "alias vim='nvim'" >> ~/.bashrc
+echo "source ~/.bashrc" >> ~/.bash_profile
+
+source ~/.bashrc
