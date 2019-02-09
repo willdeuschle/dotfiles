@@ -37,3 +37,5 @@ echo "alias vim='nvim'" >> ~/.bashrc
 echo "source ~/.bashrc" >> ~/.bash_profile
 
 source ~/.bashrc
+
+vim +'PlugInstall --sync' +qa
