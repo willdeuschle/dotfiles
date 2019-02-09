@@ -27,7 +27,9 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'ncm2/ncm2' " https://github.com/ncm2/ncm2, autocompletion plugin
 Plug 'roxma/nvim-yarp' " remote plugin manager, doesn't use :UpdateRemotePlugin
 " enable ncm2 for all buffers (if it's been loaded)
-autocmd BufEnter * call ncm2#enable_for_buffer()
+if !empty(glob('~/.config/nvim/plugged/ncm2/'))
+    autocmd BufEnter * call ncm2#enable_for_buffer()
+endif
 " important: :help Ncm2PopupOpen, :help completeopt for more information
 " in order: don't insert match until selected, pop a menu even when only one
 " option, don't select a match - force the user to select it from the menu
