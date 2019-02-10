@@ -38,6 +38,9 @@ if ! [ -f ~/.config/nvim/init.vim ]; then
     ln -s ~/dotfiles/vim/vimrc ~/.config/nvim/init.vim
 fi
 
+# setup keyboard shortcuts
+source ./ubuntu_keybindings.txt
+
 # bashrc
 echo "alias vim='nvim'" >> ~/.bashrc
 echo "export EDITOR='vim'" >> ~/.bashrc
