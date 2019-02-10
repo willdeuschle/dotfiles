@@ -44,9 +44,6 @@ source "$PWD/dotfiles/ubuntu_keybindings.txt"
 # bashrc
 echo "alias vim='nvim'" >> ~/.bashrc
 echo "export EDITOR='vim'" >> ~/.bashrc
-#echo "# show the application search bar - note: need to unset and reset this for it to register
-#gsettings set org.gnome.shell.keybindings toggle-overview \"[]\"
-#gsettings set org.gnome.shell.keybindings toggle-overview \"['<Super>Space']\"" >> ~/.bashrc
 echo "# Git branch in prompt.
 parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'

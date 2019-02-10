@@ -172,6 +172,9 @@ nnoremap <Leader>fp :let @+=@%<CR>
 " Reselecting pasted/yanked text
 nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 
+" paste last yank (in case we overwrite "" buffer with a delete)
+nnoremap <Leader>y "0p
+
 " Paste mode toggle - disable auto indenting, etc.
 set pastetoggle=<F2>
 
