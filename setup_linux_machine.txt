@@ -45,14 +45,14 @@ source "$PWD/dotfiles/ubuntu_keybindings.txt"
 echo "alias vim='nvim'" >> ~/.bashrc
 echo "export EDITOR='vim'" >> ~/.bashrc
 echo "# show the application search bar - note: need to unset and reset this for it to register
-gsettings set org.gnome.shell.keybindings toggle-overview ""
-gsettings set org.gnome.shell.keybindings toggle-overview "['<Super>Space']"" >> ~/.bashrc
+gsettings set org.gnome.shell.keybindings toggle-overview \"[]\"
+gsettings set org.gnome.shell.keybindings toggle-overview \"['<Super>Space']\"" >> ~/.bashrc
 echo "# Git branch in prompt.
 parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }" >> ~/.bashrc
 echo "# prompt coloring
-export PS1='\[\033[1;31m\]\u@\h\[\033[1;34m\] \w\[\033[1;32m\]$(parse_git_branch)\[\033[1;36m\] ➜\[\033[0m\] '" >> ~/.bashrc
+export PS1='\[\033[1;31m\]\u@\h\[\033[1;34m\] \w\[\033[1;32m\]$(parse_git_branch)\[\033[1;36m\] →\[\033[0m\] '" >> ~/.bashrc
 echo "# whimsy
 fortune | cowsay | lolcat" >> ~/.bashrc
 
