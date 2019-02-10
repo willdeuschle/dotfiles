@@ -10,4 +10,4 @@ gsettings set org.gnome.shell.keybindings toggle-overview "['<Super>Space']"
 # new tab from terminal
 gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ new-tab '<Super>t'
 # close tab from terminal
-gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ close-tab '<Super>w'<Paste>'
+gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ close-tab '<Super>w'
