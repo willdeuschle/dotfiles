@@ -39,7 +39,7 @@ if ! [ -f ~/.config/nvim/init.vim ]; then
 fi
 
 # setup keyboard shortcuts
-source "$PWD/ubuntu_keybindings.txt"
+source "$PWD/dotfiles/ubuntu_keybindings.txt"
 
 # bashrc
 echo "alias vim='nvim'" >> ~/.bashrc

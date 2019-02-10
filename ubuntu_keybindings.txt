@@ -1,11 +1,11 @@
-#! /bin/bash -e
+#! /bin/bash -eu
 
 # application switching with tabs
 gsettings set org.gnome.desktop.wm.keybindings switch-applications "['<Super>Tab']"
-gsettings set org.gnome.desktop.wm.keybindings switch-applications-backward “['<Super><Shift>Tab']"
+gsettings set org.gnome.desktop.wm.keybindings switch-applications-backward "['<Super><Shift>Tab']"
 
 # show the application search bar
-gsettings set org.gnome.shell.keybindings toggle-overview “['<Super>Space']"
+gsettings set org.gnome.shell.keybindings toggle-overview "['<Super>Space']"
 
 # new tab from terminal
 gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ new-tab '<Super>t'
