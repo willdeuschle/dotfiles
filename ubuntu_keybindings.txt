@@ -4,9 +4,8 @@
 gsettings set org.gnome.desktop.wm.keybindings switch-applications "['<Super>Tab']"
 gsettings set org.gnome.desktop.wm.keybindings switch-applications-backward "['<Super><Shift>Tab']"
 
-# show the application search bar - note: need to unset and reset this for it to register
-gsettings set org.gnome.shell.keybindings toggle-overview "[]"
-gsettings set org.gnome.shell.keybindings toggle-overview "['<Super>Space']"
+# show the application search bar
+gsettings set org.gnome.desktop.wm.keybindings panel-main-menu "['<Super>Space']"
 
 # new tab from terminal
 gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ new-tab '<Super>t'
@@ -16,3 +15,6 @@ gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/k
 # terminal move tab left and right
 gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ prev-tab '<Super>braceleft'
 gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ next-tab '<Super>braceright'
+
+# terminal full screen
+gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ full-screen '<Super>Return'
