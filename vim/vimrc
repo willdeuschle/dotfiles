@@ -17,6 +17,9 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
     augroup END
 endif
 
+" best leader. set immediately so all mappings adopt it
+let mapleader = "\<Space>"
+
 " Start plugin manager, specify directory for plugin files
 call plug#begin('~/.config/nvim/plugged')
 
@@ -152,9 +155,6 @@ set smartcase " don't ignore case if we put a capital letter in search string
 
 " incremental substitution when changing text with %s, you see it in a split
 set inccommand=split
-
-" best leader
-let mapleader = "\<Space>"
 
 " write hotkey
 nnoremap <Leader>w :w<CR>
