@@ -167,7 +167,7 @@ nnoremap <Leader>w :w<CR>
 nnoremap <Leader>m :let @+=@"<CR>
 
 " copy current file path to system clipboard
-nnoremap <Leader>fp :let @+=@%<CR>
+nnoremap <Leader>p :let @+=@%<CR>
 
 " Reselecting pasted/yanked text
 nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
