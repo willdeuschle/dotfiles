@@ -1,12 +1,24 @@
 #!/bin/bash -eu
 
 # apt packages
+sudo apt update
 sudo apt install -y vim neovim wget curl gnome-tweak-tool git tmux python3-pip fonts-powerline silversearcher-ag flake8 htop rsync fortune-mod cowsay lolcat xclip
 # install chrome
 sudo apt-get install libxss1 libappindicator1 libindicator7
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo apt install ./google-chrome*.deb
 rm ./google-chrome*.deb
+# install docker
+sudo apt install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+sudo apt install docker-ce docker-ce-cli containerd.io
+# create docker group and add user to it
+sudo groupadd docker
+sudo usermod -aG docker $USER
 
 # python packages
 pip3 install --upgrade neovim
