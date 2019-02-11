@@ -1,22 +1,12 @@
 #!/bin/bash -eu
 
-if [ "$(uname)" == "Darwin" ]; then
-    machine='mac'
-else
-    machine='linux'
-fi
-
-if [ $machine == 'linux' ]; then
-    # apt packages
-    sudo apt install -y vim neovim wget curl gnome-tweak-tool git tmux python3-pip fonts-powerline silversearcher-ag flake8 htop rsync fortune-mod cowsay lolcat xclip
-    # install chrome
-    sudo apt-get install libxss1 libappindicator1 libindicator7
-    wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-    sudo apt install ./google-chrome*.deb
-    rm ./google-chrome*.deb
-else
-    brew install vim neovim git tmux python3 the_silver_searcher flake8 fortune cowsay lolcat
-fi
+# apt packages
+sudo apt install -y vim neovim wget curl gnome-tweak-tool git tmux python3-pip fonts-powerline silversearcher-ag flake8 htop rsync fortune-mod cowsay lolcat xclip
+# install chrome
+sudo apt-get install libxss1 libappindicator1 libindicator7
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo apt install ./google-chrome*.deb
+rm ./google-chrome*.deb
 
 # python packages
 pip3 install --upgrade neovim
@@ -47,10 +37,8 @@ if ! [ -f ~/.config/nvim/init.vim ]; then
     ln -s ~/dotfiles/vim/vimrc ~/.config/nvim/init.vim
 fi
 
-if [ $machine == 'linux' ]; then
-    # setup keyboard shortcuts
-    source "$PWD/dotfiles/ubuntu_keybindings.txt"
-fi
+# setup keyboard shortcuts
+source "$PWD/dotfiles/ubuntu_keybindings.txt"
 
 # bashrc
 echo "alias vim='nvim'" >> ~/.bashrc
