@@ -63,6 +63,9 @@ source "$PWD/dotfiles/ubuntu_keybindings.txt"
 # bashrc
 echo "alias vim='nvim'" >> ~/.bashrc
 echo "export EDITOR='vim'" >> ~/.bashrc
+echo "alias gs='git status'" >> ~/.bashrc
+echo "alias gc='git commit'" >> ~/.bashrc
+echo "alias gp='git pull'" >> ~/.bashrc
 echo "# Git branch in prompt.
 parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
