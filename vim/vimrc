@@ -206,8 +206,24 @@ let g:bufferline_echo=0
 set laststatus=2
 " always display the tabline in vim
 set showtabline=2
+" no need for the mode because shown in lightline
+set noshowmode
+" Explaining our lightline settings here
+"   colorscheme: wombat is preferred
+"   active: configure bottom left of statusline
+"   component_function - gitbranch: show git branch in statusline
+"   tabline: show bufferline at top left of screen
+"   component_expand - bufferline: show buffers, an expanding component
+"   component_type - bufferline: color the bufferline (current buffer dark)
 let g:lightline = {
       \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+	  \ 'component_function': {
+      \   'gitbranch': 'fugitive#head'
+      \ },
       \ 'tabline': {
       \   'left': [ ['bufferline'] ]
       \ },
@@ -219,8 +235,11 @@ let g:lightline = {
       \ },
       \ }
 
+" function that generates the buffer list to be placed in the tabline
 function! LightlineBufferline()
+  " refresh the current state of the buffers
   call bufferline#refresh_status()
+  " return a [left, current, right] list of buffers
   return [ g:bufferline_status_info.before, g:bufferline_status_info.current, g:bufferline_status_info.after]
 endfunction
 "" powerline fonts start
