@@ -20,6 +20,7 @@ if ! [ -d ~/dotfiles ]; then
 fi
 if ! [ -f ~/.tmux.conf ]; then
     ln -s ~/dotfiles/tmux/.tmux.conf ~/.tmux.conf
+    ln -s ~/dotfiles/tmux/.tmuxline.snapshot.txt ~/.tmuxline.snapshot.txt
 fi
 if ! [ -f ~/.vimrc ]; then
     ln -s ~/dotfiles/vim/vimrc ~/.vimrc
