@@ -70,14 +70,13 @@ Plug 'neomake/neomake'
 """""""""""
 " Monokai
 Plug 'sickill/vim-monokai'
-" Airline
-"Plug 'vim-airline/vim-airline'
-"Plug 'vim-airline/vim-airline-themes'
+" Lightline - for pretty statusline and tmuxline
 Plug 'itchyny/lightline.vim'
+" for list of buffers
 Plug 'bling/vim-bufferline'
-" Git Plugin, gets included in airline
+" Git plugin, used to show git branch in lightline
 Plug 'tpope/vim-fugitive'
-" Tmux line
+" Tmuxline, used with lightline styles
 Plug 'edkolev/tmuxline.vim'
 
 """"""""""""""""""""
@@ -196,9 +195,9 @@ augroup RunNeomake
     autocmd BufWritePost * Neomake
 augroup END
 
-"""""""""""
-" Airline "
-"""""""""""
+"""""""""""""
+" Lightline "
+"""""""""""""
 
 " don't let bufferline echo to the commmand bar
 let g:bufferline_echo=0
@@ -206,7 +205,7 @@ let g:bufferline_echo=0
 set laststatus=2
 " always display the tabline in vim
 set showtabline=2
-" no need for the mode because shown in lightline
+" no need for the mode (insert, normal, etc.) because shown in lightline
 set noshowmode
 " Explaining our lightline settings here
 "   colorscheme: wombat is preferred
@@ -242,42 +241,6 @@ function! LightlineBufferline()
   " return a [left, current, right] list of buffers
   return [ g:bufferline_status_info.before, g:bufferline_status_info.current, g:bufferline_status_info.after]
 endfunction
-"" powerline fonts start
-" this should auto populate the airline symbols dict with powerline symbols
-"let g:airline_powerline_fonts = 1
-"" but if it doesn't, we can do it manually
-"if !exists('g:airline_symbols')
-    "let g:airline_symbols = {}
-"endif
-"" now add them all
-"" unicode symbols
-"let g:airline_left_sep = '»'
-"let g:airline_left_sep = '▶'
-"let g:airline_right_sep = '«'
-"let g:airline_right_sep = '◀'
-"let g:airline_symbols.linenr = '␊'
-"let g:airline_symbols.linenr = '␤'
-"let g:airline_symbols.linenr = '¶'
-"let g:airline_symbols.branch = '⎇'
-"let g:airline_symbols.paste = 'ρ'
-"let g:airline_symbols.paste = 'Þ'
-"let g:airline_symbols.paste = '∥'
-"let g:airline_symbols.whitespace = 'Ξ'
-"" airline symbols
-"let g:airline_left_sep = ''
-"let g:airline_left_alt_sep = ''
-"let g:airline_right_sep = ''
-"let g:airline_right_alt_sep = ''
-"let g:airline_symbols.branch = ''
-"let g:airline_symbols.readonly = ''
-"let g:airline_symbols.linenr = ''
-"" powerline fonts end
-
-" Enable list of buffers at top of file
-let g:airline#extensions#tabline#enabled = 1
-
-" Show just the filename (instead of entire path to file)
-let g:airline#extensions#tabline#fnamemod = ':t'
 
 """""""""""""""""""""
 " Buffer Management "

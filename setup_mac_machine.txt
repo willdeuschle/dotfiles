@@ -3,7 +3,6 @@
 echo 'Be sure to install brew first'
 brew install vim neovim git tmux python3 the_silver_searcher flake8 fortune cowsay lolcat
 brew cask install iterm2
-echo 'Need to install powerline fonts by hand (follow https://github.com/powerline/fonts) and set the non-ASCII fonts used in iterm2 to powerline fonts'
 
 # python packages
 pip3 install --upgrade neovim
@@ -36,16 +35,7 @@ if ! [ -f ~/.config/nvim/init.vim ]; then
 fi
 
 # bashrc
-echo "alias vim='nvim'" >> ~/.bashrc
-echo "export EDITOR='vim'" >> ~/.bashrc
-echo "# Git branch in prompt.
-parse_git_branch() {
-    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-}" >> ~/.bashrc
-echo "# prompt coloring
-export PS1='\[\033[1;31m\]\u@\h\[\033[1;34m\] \w\[\033[1;32m\]\$(parse_git_branch)\[\033[1;36m\] → \[\033[0m\] '" >> ~/.bashrc
-echo "# whimsy
-fortune | cowsay | lolcat" >> ~/.bashrc
+cat ~/dotfiles/.bashrc >> ~/.bashrc
 
 # bash_profile setup
 echo "source ~/.bashrc" >> ~/.bash_profile
