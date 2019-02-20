@@ -57,7 +57,7 @@ Plug 'scrooloose/nerdcommenter'
 """"""""""""""""
 Plug 'scrooloose/nerdtree'
 " mapping to open NERDTree
-noremap <Leader>f :NERDTree<CR>
+noremap <Leader>f :NERDTreeToggle<CR>
 
 """""""""""""""""""""""
 " Syntax Highlighting "
@@ -85,6 +85,8 @@ Plug 'edkolev/tmuxline.vim'
 
 " Markdown styling
 Plug 'plasticboy/vim-markdown'
+" Python indenting
+Plug 'Vimjas/vim-python-pep8-indent'
 
 """"""""""""""""""""
 " Navigation Tools "
