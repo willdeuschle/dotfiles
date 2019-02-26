@@ -183,6 +183,9 @@ nnoremap <Leader>y "0p
 " Paste mode toggle - disable auto indenting, etc.
 set pastetoggle=<F2>
 
+" Finding the current absolute file path
+nnoremap <Leader>g 1<C-g>
+
 """""""""""""""""""""""
 " Syntax Highlighting "
 """""""""""""""""""""""
