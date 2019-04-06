@@ -1,7 +1,8 @@
 #!/bin/bash -eu
 
 echo 'Be sure to install brew first'
-brew install vim neovim git tmux python3 the_silver_searcher flake8 fortune cowsay lolcat
+brew update
+brew install vim neovim curl git tmux python3 the_silver_searcher flake8 fortune cowsay lolcat
 brew cask install iterm2
 
 # python packages
@@ -39,8 +40,9 @@ cat ~/dotfiles/.bashrc >> ~/.bashrc
 
 # ls and grep colors
 echo """
-alias ls='ls -G'
-export LSCOLORS=ExFxCxDxBxegedabagacad""" >> ~/.bashrc
+alias ls='ls -Gp'
+export CLICOLOR=1
+export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx""" >> ~/.bashrc
 
 # bash_profile setup
 echo "source ~/.bashrc" >> ~/.bash_profile
@@ -48,3 +50,5 @@ echo "source ~/.bashrc" >> ~/.bash_profile
 source ~/.bashrc
 
 vim +'PlugInstall --sync' +qa
+
+echo 'Consider installing docker and chrome'
