@@ -78,6 +78,8 @@ Plug 'bling/vim-bufferline'
 Plug 'tpope/vim-fugitive'
 " Tmuxline, used with lightline styles
 Plug 'edkolev/tmuxline.vim'
+" dont use the powerline separators
+let g:tmuxline_powerline_separators = 0
 
 """"""""""""""""""""
 " Language Styling "
