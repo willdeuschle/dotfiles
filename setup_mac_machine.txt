@@ -2,7 +2,7 @@
 
 echo 'Be sure to install brew first'
 brew update
-brew install vim neovim curl git tmux python3 the_silver_searcher flake8 fortune cowsay lolcat
+brew install vim neovim curl git tmux python3 the_silver_searcher flake8 fortune cowsay lolcat tig
 brew cask install iterm2
 
 # python packages
