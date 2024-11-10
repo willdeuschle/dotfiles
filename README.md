@@ -1,5 +1,9 @@
 # dotfiles
 
+# automated setup
+Copy the `setup_linux_machine.txt` or `setup_mac_machine.txt` file contents, and execute them locally (e.g. `bash setup_mac_machine.txt`).
+
+# manual setup
 1. Copy or clone the repo, put it in a `dotfiles` directory
 2. Install tmux: `brew install tmux`
 3. Link `~/dotfiles/tmux/.tmux.conf` to `~/.tmux.conf`: `ln -s ~/dotfiles/tmux/.tmux.conf ~/.tmux.conf`
