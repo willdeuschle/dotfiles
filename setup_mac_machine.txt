@@ -35,6 +35,9 @@ if ! [ -f ~/.config/nvim/init.vim ]; then
     ln -s ~/dotfiles/vim/vimrc ~/.config/nvim/init.vim
 fi
 
+# prefer bash
+chsh -s /bin/bash
+
 # bashrc
 cat ~/dotfiles/.bashrc >> ~/.bashrc
 
@@ -45,6 +48,7 @@ export CLICOLOR=1
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx""" >> ~/.bashrc
 
 # bash_profile setup
+echo "export BASH_SILENCE_DEPRECATION_WARNING=1" >> ~/.bash_profile
 echo "source ~/.bashrc" >> ~/.bash_profile
 
 source ~/.bashrc
