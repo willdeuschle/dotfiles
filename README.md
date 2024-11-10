@@ -3,6 +3,8 @@
 # automated setup
 Copy the `setup_linux_machine.txt` or `setup_mac_machine.txt` file contents, and execute them locally (e.g. `bash setup_mac_machine.txt`).
 
+Note there is still a manual step for setting up python for neovim described in https://github.com/deoplete-plugins/deoplete-jedi/wiki/Setting-up-Python-for-Neovim
+
 # manual setup
 1. Copy or clone the repo, put it in a `dotfiles` directory
 2. Install tmux: `brew install tmux`

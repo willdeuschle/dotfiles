@@ -23,6 +23,11 @@ let mapleader = "\<Space>"
 " Start plugin manager, specify directory for plugin files
 call plug#begin('~/.config/nvim/plugged')
 
+" ncm2 and other python plugins require python and the pynvim package
+" This is installed via pyenv in a virtualenv
+" Installtion instructions in https://github.com/deoplete-plugins/deoplete-jedi/wiki/Setting-up-Python-for-Neovim
+let g:python3_host_prog = '/Users/williamdeuschle/.pyenv/versions/neovim/bin/python'
+
 " Plugins section
 """"""""""""""""
 " Autocomplete "
